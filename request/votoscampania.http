@@ -1,0 +1,19 @@
+@getusuarios = http://localhost:3001/api/votoscampania/getusuarios
+@saveusuario = http://localhost:3001/api/votoscampania/saveusuario
+
+POST {{saveusuario}}
+Content-Type: application/json
+
+{
+    "nombre": "Abraham Vieyra Razo",
+    "correo": "veyra@gmail.com",
+    "contrasena": "cero123",
+    "planta": "primera",
+    "puesto": "gerente",
+    "status_session": "0",
+    "baja": "0",
+    "usuario": "veyra@hotmail.com"
+}
+
+###
+GET {{getusuarios}}

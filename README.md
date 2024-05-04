@@ -1,2 +1,2 @@
 # apirest-mysql
-apirets con mysql
+api rest con mysql
