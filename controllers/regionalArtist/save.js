@@ -35,9 +35,9 @@ const saveusuario = async (req, res) => {
     try {
         const [results] = await connection.execute(
             'INSERT INTO u943042028_registro.tb_web_usuarios_reg_01 ' +
-            '(fecha, nombre, apeidos, edad, escuela, telefono, region, email, archivo, estatus_usuario, estatus_proceso, comentario, id_web, fecha_actualizacion) ' +
-            'VALUES (CURRENT_TIMESTAMP(), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP());',
-            [body.nombre, body.apeidos, body.edad, body.escuela, body.telefono, body.region, body.email, file.filename, body.estatus_usuario, body.estatus_proceso, body.comentario, body.id_web]
+            '(fecha, nombre, apeidos, edad, escuela, telefono, region, email, archivo, estatus_usuario, estatus_proceso, comentario, id_web, fecha_actualizacion, como_se_entero) ' +
+            'VALUES (CURRENT_TIMESTAMP(), ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, ?, 1, CURRENT_TIMESTAMP(), ?);',
+            [body.nombre, body.apeidos, body.edad, body.escuela, body.telefono, body.region, body.email, file.filename, body.comentario, body.conociendo]
         );
 
         const insertId = results.insertId;
