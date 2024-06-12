@@ -1,0 +1,23 @@
+@getusuarios = http://localhost:3001/api/regionalartist/getusuarios
+@saveusuario = http://localhost:3001/api/regionalartist/saveusuario
+
+POST {{saveusuario}}
+Content-Type: application/json
+
+{
+    "nombre": "kevin martinez",
+    "apeidos": "martinez martinez",
+    "edad": 18,
+    "escuela": "secundaria",
+    "telefono": "1234567890",
+    "region": "chilchota",
+    "email": "kevinmartinex@gmail.com",
+    "archivo": "archivo.pdf",
+    "estatus_usuario": "1",
+    "estatus_proceso": "0",
+    "comentario": "quiero trabajo por favor",
+    "id_web": 1
+}
+
+###
+GET {{getusuarios}}

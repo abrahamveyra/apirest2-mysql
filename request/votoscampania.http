@@ -5,14 +5,11 @@ POST {{saveusuario}}
 Content-Type: application/json
 
 {
-    "nombre": "Abraham Vieyra Razo",
-    "correo": "veyra@gmail.com",
-    "contrasena": "cero123",
-    "planta": "primera",
-    "puesto": "gerente",
-    "status_session": "0",
-    "baja": "0",
-    "usuario": "veyra@hotmail.com"
+    "fecha": "2024-06-06",
+    "descripcion": "campañas",
+    "link": "pendiente",
+    "usuario": "veyraabram@gmail.com",
+    "fecha_actualizacion": "2024-06-06"
 }
 
 ###
