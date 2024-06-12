@@ -31,11 +31,11 @@ app.use((request,response,next) => {
   });
 
   //Base Routes
-  const votos_campania = require('./routes/votoscampania/votoscampania.routes');
+  const regional_artist = require('./routes/regionalartist/regionalArtist.routes');
 
 
   //Routes
-  app.use('/api/votoscampania', votos_campania);
+  app.use('/api/regionalartist', regional_artist);
   
 
 app.listen(port, (err) => {
