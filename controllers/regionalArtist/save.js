@@ -19,18 +19,9 @@ const dbConfig = require('../../dbconfig');
 
 const saveusuario = async (req, res) => {
     const { body, file } = req;
-    console.log(body, file);
-
-    const connection = await mysql.createConnection({
-        host: '193.203.166.181',
-        user: 'u943042028_regional_artis',
-        password: 'Regionalartist2025',
-        database: 'u943042028_registro',
-        port: 3306, // Puerto predeterminado para MySQL
-        waitForConnections: true,
-        connectionLimit: 10,
-        queueLimit: 0
-    });
+   // console.log(body, file);
+console.log(dbConfig.config.connectionConfig)
+    const connection = await mysql.createConnection(dbConfig.config.connectionConfig);
 
     try {
         const [results] = await connection.execute(

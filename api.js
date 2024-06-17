@@ -32,10 +32,12 @@ app.use((request,response,next) => {
 
   //Base Routes
   const regional_artist = require('./routes/regionalartist/regionalArtist.routes');
+  const archivos_route = require('./routes/regionalartist/archivos.routes');
 
 
   //Routes
   app.use('/api/regionalartist', regional_artist);
+  app.use('/api/archivos', archivos_route);
   
 
 app.listen(port, (err) => {

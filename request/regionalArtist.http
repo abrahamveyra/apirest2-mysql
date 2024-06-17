@@ -1,6 +1,33 @@
 @getusuarios = http://localhost:3001/api/regionalartist/getusuarios
 @saveusuario = http://localhost:3001/api/regionalartist/saveusuario
+@getArchivosRegionalArtist = http://localhost:3001/api/archivos/getArchivosRegionalArtist/image1718156976793.pdf 
+@updateusuario = http://localhost:3001/api/regionalartist/Rechazarusuario
+@Aprobarusuario = http://localhost:3001/api/regionalartist/Aprobarusuario
+@deleteUsuario=http://localhost:3001/api/regionalartist/deleteUsuario
 
+DELETE {{deleteUsuario}}
+Content-Type: application/json
+
+{
+    "id_usuario": 2
+}
+###
+PUT {{Aprobarusuario}}
+Content-Type: application/json
+
+{
+    "id_usuario": 2
+}
+###
+PUT {{updateusuario}}
+Content-Type: application/json
+
+{
+    "id_usuario": 2
+}
+###
+GET {{getArchivosRegionalArtist}}/image1718156976793.pdf 
+###
 POST {{saveusuario}}
 Content-Type: application/json
 
@@ -20,4 +47,9 @@ Content-Type: application/json
 }
 
 ###
-GET {{getusuarios}}
+POST {{getusuarios}}
+Content-Type: application/json
+
+{
+    "proceso": 1
+}
