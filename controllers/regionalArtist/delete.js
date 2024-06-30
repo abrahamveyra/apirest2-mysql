@@ -8,7 +8,7 @@ async function deleteUsuario(data) {
    console.log(data)
      return new Promise((resolve, reject) => {
         const query = `
-            DELETE FROM u943042028_registro.tb_web_usuarios_reg_01;`;
+            DELETE FROM u943042028_registro.tb_web_usuarios_adm_reg_01;`;
 
         connection.query(query, function(error, results, fields) {
             if (error) {

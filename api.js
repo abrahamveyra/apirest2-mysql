@@ -33,11 +33,19 @@ app.use((request,response,next) => {
   //Base Routes
   const regional_artist = require('./routes/regionalartist/regionalArtist.routes');
   const archivos_route = require('./routes/regionalartist/archivos.routes');
+  const authRoutes = require('./routes/regionalartist/auth.routes');
+  const protectedRoutes = require('./routes/regionalartist/protectedRoutes.routes');
+  const email = require('./routes/regionalartist/correo.routes');
+
 
 
   //Routes
   app.use('/api/regionalartist', regional_artist);
   app.use('/api/archivos', archivos_route);
+  app.use('/api/token', authRoutes);
+  app.use('/api/protected', protectedRoutes);
+  app.use('/api/correo', email);
+ 
   
 
 app.listen(port, (err) => {

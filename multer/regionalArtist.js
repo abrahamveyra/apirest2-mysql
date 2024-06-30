@@ -9,7 +9,7 @@ const storage = multer.diskStorage({
         if (__dirname.includes('C:')) {
             destinationPath = path.join(__dirname, '../../imagenes');
         } else {
-            destinationPath = path.join('/mnt/archivosapp/plantaAguacate');
+           // destinationPath = path.join('/mnt/archivosapp/plantaAguacate');
         }
 
         // Verificar si la carpeta de destino existe, si no, crearla

@@ -1,0 +1,10 @@
+@sendEmail =  http://localhost:3001/api/correo/sendEmail
+
+POST {{sendEmail}}
+Content-Type: application/json
+
+{
+  "toEmail": "dev.ti@grupoelcerezo.com",
+  "fromEmail": "veyraabram@gmail.com",
+  "message": "Quiubas mi buen y estimado kevin, como andamos"
+}

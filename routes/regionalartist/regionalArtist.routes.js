@@ -12,11 +12,32 @@ const update = require('../../controllers/regionalArtist/update');
 const delet = require('../../controllers/regionalArtist/delete');
 
 
-router.post('/saveusuario', uploader.single('file'), save.saveusuario)
+router.post('/saveusuario', uploader.single('file'), save.saveusuario);
 
-router.route('/getusuarios').post( (request,response) => {
+router.route('/saveadmin').post( (request,response) => {
      let params = { ...request.body };
-     query.getusuarios(params).then(result => {
+     save.saveadmin(params).then(result => {
+     response.status(201).json(result);
+     });
+    });
+
+router.route('/getSolicitudes').post( (request,response) => {
+     let params = { ...request.body };
+     query.getSolicitudes(params).then(result => {
+     response.status(201).json(result);
+     });
+    });
+
+    router.route('/getAprobados').post( (request,response) => {
+     let params = { ...request.body };
+     query.getAprobados(params).then(result => {
+     response.status(201).json(result);
+     });
+    });
+
+    router.route('/getRechazados').post( (request,response) => {
+     let params = { ...request.body };
+     query.getRechazados(params).then(result => {
      response.status(201).json(result);
      });
     });
@@ -24,6 +45,13 @@ router.route('/getusuarios').post( (request,response) => {
     router.route('/deleteUsuario').delete( (request,response) => {
      let params = { ...request.body };
      delet.deleteUsuario(params).then(result => {
+     response.status(201).json(result);
+     });
+    });
+
+    router.route('/getRegistros').post( (request,response) => {
+     let params = { ...request.body };
+     query.getRegistros(params).then(result => {
      response.status(201).json(result);
      });
     });
