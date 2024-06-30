@@ -131,12 +131,19 @@ async function getRegistros(data) {
     });
 }
 
+async function getHolaUTM() {
+ 
+
+    return "Quiubule muchachones, me da gusto saludarlos, les comparto que ya estamos en linea"; 
+}
+
 
 module.exports = {
     getSolicitudes
     ,getAprobados
     ,getRechazados
     ,getRegistros
+    ,getHolaUTM
 }
 
 

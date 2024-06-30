@@ -69,5 +69,11 @@ router.route('/getSolicitudes').post( (request,response) => {
      response.status(201).json(result);
      });
     });
+
+    router.route('/getHolaUTM').get( (request, response) => {
+     query.getHolaUTM().then(result => {
+     response.status(201).json(result);
+     });
+    });
     
     module.exports = router;
