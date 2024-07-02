@@ -6,11 +6,9 @@ const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         let destinationPath = '';
 
-        if (__dirname.includes('C:')) {
-            destinationPath = path.join(__dirname, '../../imagenes');
-        } else {
-            destinationPath = path.join('../evidencias/regart');
-        }
+      
+            destinationPath = path.join(__dirname, '../evidencias/regart');
+       
 
         // Verificar si la carpeta de destino existe, si no, crearla
         fs.access(destinationPath, fs.constants.F_OK, (err) => {

@@ -8,11 +8,10 @@ console.log(req.params.image);
      image = req.params.image
      let pathImage = "";
  
-     if (__dirname.includes('C:')) {
-        pathImage =  path.join(__dirname, '../../../imagenes/'+image)
-     }else {
-       pathImage =  path.join('../evidencias/regart/'+image)
-     }
+    
+        pathImage =  path.join(__dirname, '../../evidencias/regart/'+image)
+
+     
      
      
       
