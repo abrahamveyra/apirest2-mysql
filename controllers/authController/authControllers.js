@@ -8,7 +8,7 @@ const secretKey = 'your_secret_key'; // Cambia esto por una clave segura
 
 exports.login = async (req, res) => {
     const { correo, password } = req.body;
-console.log(req.body)
+//console.log(req.body)
     try {
         // Consulta para obtener el usuario por correo
         const query = 'SELECT id_usuario, fecha, nombre, apeidos, correo, telefono, password, usuario, id_web, fecha_actualizacion, estatus FROM u943042028_registro.tb_web_usuarios_adm_reg_01 WHERE correo = ?';

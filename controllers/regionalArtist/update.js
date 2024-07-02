@@ -10,7 +10,7 @@ async function Rechazarusuario(data) {
     return new Promise((resolve, reject) => {
         const query = `
             UPDATE u943042028_registro.tb_web_usuarios_reg_01
-            SET estatus_proceso = 1
+            SET estatus_proceso = 0
             WHERE id_usuario = ?;
         `;
         
