@@ -11,7 +11,7 @@ console.log(req.params.image);
      if (__dirname.includes('C:')) {
         pathImage =  path.join(__dirname, '../../../imagenes/'+image)
      }else {
-       pathImage =  path.join('/mnt/archivosapp/'+image)
+       pathImage =  path.join('../evidencias/regart/'+image)
      }
      
      
