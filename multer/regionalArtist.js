@@ -7,7 +7,7 @@ const storage = multer.diskStorage({
         let destinationPath = '';
 
       
-            destinationPath = path.join(__dirname, '../evidencias/regart');
+            destinationPath = path.join(__dirname, '../archivos/regart');
        
 
         // Verificar si la carpeta de destino existe, si no, crearla

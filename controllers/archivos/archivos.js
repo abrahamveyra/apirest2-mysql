@@ -9,7 +9,7 @@ console.log(req.params.image);
      let pathImage = "";
  
     
-        pathImage =  path.join(__dirname, '../../evidencias/regart/'+image)
+        pathImage =  path.join(__dirname, '../../archivos/regart/'+image)
 
      
      
