@@ -55,7 +55,14 @@ router.route('/getSolicitudes').post( (request,response) => {
      response.status(201).json(result);
      });
     });
-    
+
+    router.route('/getEmail').post( (request,response) => {
+     let params = { ...request.body };
+     query.getEmail(params).then(result => {
+     response.status(201).json(result);
+     });
+    });
+
     router.route('/Rechazarusuario').put( (request,response) => {
      let params = { ...request.body };
      update.Rechazarusuario(params).then(result => {
