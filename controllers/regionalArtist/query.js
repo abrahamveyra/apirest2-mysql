@@ -1,8 +1,55 @@
+async function getUsuario(req, res) {
+    console.log(req.id_usuario);
+    const connection = require('../../dbconfig');
+
+    return new Promise((resolve, reject) => {
+        connection.query(
+            'SELECT ' +
+            'id_usuario, ' +
+            'DATE_FORMAT(fecha, "%Y-%m-%d %H:%i:%s") AS fecha, ' +
+            'nombre, ' +
+            'apeidos, ' +
+            'edad, ' +
+            'escuela, ' +
+            'telefono, ' +
+            'region, ' +
+            'email, ' +
+            'archivo, ' +
+            'estatus_usuario, ' +
+            'estatus_proceso, ' +
+            'comentario, ' +
+            'id_web, ' +
+            'fecha_actualizacion, ' +
+            'como_se_entero, ' +
+            'data ' +
+            'FROM u943042028_registro.tb_web_usuarios_reg_01 ' +
+            'WHERE id_usuario = ? AND estatus_usuario = 1;', 
+            [req.id_usuario],  // Pasa el id_usuario como parámetro
+            function (error, results, fields) {
+                if (error) {
+                    reject(error);
+                    return;
+                }
+                
+                // Convertir data de tipo BLOB a base64
+                const formattedResults = results.map(result => {
+                    return {
+                        ...result,
+                        data: result.data ? result.data.toString('base64') : null  // Convertir BLOB a base64 si existe
+                    };
+                });
+
+                resolve(formattedResults);
+            }
+        );
+    });
+}
 
 
 
 
-async function getSolicitudes(data) {
+async function getSolicitudes(req, res) {
+    console.log(req);
     const connection = require('../../dbconfig');
 
     return new Promise((resolve, reject) => {
@@ -32,11 +79,11 @@ async function getSolicitudes(data) {
                     return;
                 }
                 
-                // Convertir data de tipo BLOB a base64
+                // Verificar y formatear los resultados
                 const formattedResults = results.map(result => {
                     return {
                         ...result,
-                        data: result.data.toString('base64')  // Convertir BLOB a base64
+                        data: result.data ? result.data.toString('base64') : 'pendiente' // Validar si data es null
                     };
                 });
 
@@ -47,7 +94,8 @@ async function getSolicitudes(data) {
 }
 
 
-async function getAprobados(data) {
+
+async function getAprobados(req, res) {
     //console.log(data)
     const connection = require('../../dbconfig');
 
@@ -92,7 +140,7 @@ async function getAprobados(data) {
     });
 }
 
-async function getRechazados(data) {
+async function getRechazados(req, res) {
     //console.log(data)
     const connection = require('../../dbconfig');
 
@@ -137,7 +185,7 @@ async function getRechazados(data) {
     });
 }
 
-async function getRegistros(data) {
+async function getRegistros(req, res) {
     //console.log(data)
     const connection = require('../../dbconfig');
 
@@ -226,6 +274,7 @@ module.exports = {
     ,getRegistros
     ,getHolaUTM
     ,getEmail
+    ,getUsuario
 }
 
 

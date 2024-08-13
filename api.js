@@ -34,7 +34,7 @@ app.use((request,response,next) => {
   const regional_artist = require('./routes/regionalartist/regionalArtist.routes');
   const archivos_route = require('./routes/regionalartist/archivos.routes');
   const authRoutes = require('./routes/regionalartist/auth.routes');
-  const protectedRoutes = require('./routes/regionalartist/protectedRoutes.routes');
+  const protectedRoutes = require('./routes/regionalartist/regionalArtist.routes');
   const email = require('./routes/regionalartist/correo.routes');
 
 
