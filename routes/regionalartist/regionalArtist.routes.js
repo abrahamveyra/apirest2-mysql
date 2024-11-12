@@ -85,7 +85,7 @@ router.route('/getSolicitudes').post( (request,response) => {
     router.route('/getAprobados', authenticateToken).post( (request,response) => {
      let params = { ...request.body };
 
-     query.getSolicitudes(params, request) // Asegúrate de pasar la solicitud para la autenticación
+     query.getAprobados(params, request) // Asegúrate de pasar la solicitud para la autenticación
          .then(result => {
              response.status(200).json(result); // Usar 200 para solicitudes exitosas
          })
@@ -94,6 +94,22 @@ router.route('/getSolicitudes').post( (request,response) => {
          });
 
     });
+
+    router.route('/getAprobadosCount', authenticateToken).post( (request,response) => {
+        let params = { ...request.body };
+   
+        query.getAprobadosCount(params, request) // Asegúrate de pasar la solicitud para la autenticación
+            .then(result => {
+                response.status(200).json(result); // Usar 200 para solicitudes exitosas
+            })
+            .catch(error => {
+                response.status(error.status || 500).json({ message: error.message }); // Manejo de errores
+            });
+   
+       });
+
+
+    
 
     /*router.route('/getRechazados').post( (request,response) => {
      let params = { ...request.body };
@@ -113,6 +129,17 @@ router.route('/getSolicitudes').post( (request,response) => {
       });
     });
 
+    router.route('/getRechazadosCount', authenticateToken).post( (request,response) => {
+        let params = { ...request.body };
+   
+        query.getRechazadosCount(params, request).then(result => {
+        response.status(201).json(result);
+        })
+        .catch(error => {
+             response.status(error.status || 500).json({ message: error.message }); // Manejo de errores
+         });
+       });
+
     router.route('/deleteUsuario').delete( (request,response) => {
      let params = { ...request.body };
      delet.deleteUsuario(params).then(result => {
@@ -130,6 +157,18 @@ router.route('/getSolicitudes').post( (request,response) => {
           response.status(error.status || 500).json({ message: error.message }); // Manejo de errores
       });
     });
+
+    router.post('/getRegistrosCount', (request,response) => {
+        let params = { ...request.body };
+   
+        query.getRegistrosCount(params, request).then(result => {
+        response.status(201).json(result);
+        })
+        .catch(error => {
+             response.status(error.status || 500).json({ message: error.message }); // Manejo de errores
+         });
+       });
+       
     
 
     router.post('/getUsuario', (request,response) => {
